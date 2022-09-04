@@ -20,6 +20,9 @@ fi
 sed -i -e "/PermitRootLogin /c\PermitRootLogin no" /etc/ssh/sshd_config
 echo "The Root Login has been Disabled to System"
 
+service sshd restart
+echo -n "The SSHD Service has been Restarted"
+
 #Adding Sudo Privileges to Multiple Users
 while [[ -n $1 ]];
 do
